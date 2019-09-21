@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://mcorp.no/lib/mediasync.js"></script>
+</head>
+
+<body>
+
+    <audio id="player1" controls>
+                <source src="1.mp3" type="audio/mp3">
+              
+                  
+              
+              
+                
+               
+                </audio>
+    <audio id="player2" controls>
+                <source src="2.mp3" type="audio/mp3">
+              
+                  
+              
+              
+                
+               
+                </audio>
+
+
+
+
+    <script>
+        // timing object
+        var to = new TIMINGSRC.TimingObject({
+            provider: timingProvider
+        });
+
+        // set up video sync
+        var sync1 = MCorp.mediaSync(document.getElementById('player1'), to);
+
+        // set up video sync
+        var sync2 = MCorp.mediaSync(document.getElementById('player2'), to);
+    </script>
+</body>
+
+</html>

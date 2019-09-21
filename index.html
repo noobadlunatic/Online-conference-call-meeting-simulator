@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+
+<body>
+    <!-- <h2>Sound Information</h2>
+    <div id="length">Duration:</div>
+    <div id="source">Source:</div>
+    <div id="status" style="color:red;">Status: Loading</div>
+    <hr>
+    <h2>Control Buttons</h2>
+    <button id="play">Play</button>
+    <button id="pause">Pause</button>
+    <button id="restart">Restart</button>
+    <hr>
+    <h2>Playing Information</h2>
+    <div id="currentTime">0</div> -->
+
+
+
+    <audio id="myVideo1" controls>
+  <source src="1.mp3" type="audio/mp3">
+
+    
+
+
+  
+ 
+  </audio>
+    <audio id="myVideo2" controls>
+  <source src="2.mp3" type="audio/mp3">
+
+    
+
+
+  
+ 
+  </audio>
+    <audio id="myVideo3" controls>
+  <source src="3.mp3" type="audio/mp3">
+
+    
+
+
+  
+ 
+  </audio>
+
+
+    <p>Playback position: <span id="demo1"></span></p>
+    <p>Playback position: <span id="demo2"></span></p>
+    <p>Playback position: <span id="demo3"></span></p>
+    <br>
+
+    <button onclick="playAudio()" type="button">Play Audio</button>
+    <button onclick="pauseAudio()" type="button">Pause Audio</button>
+
+
+    <script>
+        // Get the video element with id="myVideo"
+        var vid1 = document.getElementById("myVideo1");
+
+        // Assign an ontimeupdate event to the video element, and execute a function if the current playback position has changed
+        vid1.ontimeupdate = function() {
+            myFunction1()
+        };
+
+        function myFunction1() {
+
+
+            // Display the current position of the video in a p element with id="demo"
+            document.getElementById("demo1").innerHTML = vid1.currentTime;
+        }
+    </script>
+
+
+    <script>
+        // Get the video element with id="myVideo"
+        var vid2 = document.getElementById("myVideo2");
+
+        // Assign an ontimeupdate event to the video element, and execute a function if the current playback position has changed
+        vid2.ontimeupdate = function() {
+            myFunction2()
+        };
+
+        function myFunction2() {
+
+
+            // Display the current position of the video in a p element with id="demo"
+            document.getElementById("demo2").innerHTML = vid2.currentTime;
+        }
+    </script>
+
+
+    <script>
+        // Get the video element with id="myVideo"
+        var vid3 = document.getElementById("myVideo3");
+
+        // Assign an ontimeupdate event to the video element, and execute a function if the current playback position has changed
+        vid3.ontimeupdate = function() {
+            myFunction3()
+        };
+
+        function myFunction3() {
+
+            // Display the current position of the video in a p element with id="demo"
+            document.getElementById("demo3").innerHTML = vid3.currentTime;
+
+        }
+    </script>
+    <script>
+        var x = document.getElementById("myVideo1");
+        var y = document.getElementById("myVideo2");
+        var z = document.getElementById("myVideo3");
+
+        function playAudio() {
+            x.play();
+            y.play();
+            z.play();
+        }
+
+        function pauseAudio() {
+            x.pause();
+            y.pause();
+            z.pause();
+        }
+    </script>
+    <script>
+        vid3.onseeking = function() {
+            vid1.currentTime = vid2.currentTime = vid3.currentTime;
+
+        };
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <script>
+        $(document).ready(function() {
+            var audioElement = document.createElement('audio');
+            audioElement.setAttribute('src', 'http://www.soundjay.com/misc/sounds/bell-ringing-01.mp3');
+
+            audioElement.addEventListener('ended', function() {
+                this.play();
+            }, false);
+
+            audioElement.addEventListener("canplay", function() {
+                $("#length").text("Duration:" + audioElement.duration + " seconds");
+                $("#source").text("Source:" + audioElement.src);
+                $("#status").text("Status: Ready to play").css("color", "green");
+            });
+
+            audioElement.addEventListener("timeupdate", function() {
+                $("#currentTime").text("Current second:" + audioElement.currentTime);
+            });
+
+            $('#play').click(function() {
+                audioElement.play();
+                $("#status").text("Status: Playing");
+            });
+
+            $('#pause').click(function() {
+                audioElement.pause();
+                $("#status").text("Status: Paused");
+            });
+
+            $('#restart').click(function() {
+                audioElement.currentTime = 0;
+            });
+        });
+    </script> -->
+</body>
+
+
+</html>
